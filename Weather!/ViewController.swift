@@ -14,13 +14,16 @@ class ViewController: UIViewController, UISearchBarDelegate{
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var degreeLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var imgView: UIImageView!
     
-    var cdeg: Int
-    var descript: String
-    var imageUrl: String
-    var locationName: String
+    var cdeg: Int = 0
+    var descript: String = ""
+    var imageUrl: String = ""
+    var realLocation: Bool = true
+    var locationName: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //set default labels on start
         cityLabel.text = "Type your city"
         degreeLabel.text = ""
@@ -43,23 +46,42 @@ class ViewController: UIViewController, UISearchBarDelegate{
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                     
                     if let current = json["current"] as? [String : AnyObject] {
-                        if let temperature = current["temp_c"] as? Int {
+                        if let temperature = current["temp_c"] as? Int {  //read temp value
                             self.cdeg = temperature
                         }
-                        if let condition = current["condition"] as? [String : AnyObject] {
+                        if let condition = current["condition"] as? [String : AnyObject] { //read conditions in the location
                             self.descript = condition["text"] as! String
                             self.imageUrl = condition["icon"] as! String
                         }
-                        if let location = json["location"] as? [String : AnyObject] {
-                            self.locationName = location["name"] as! String
-                        }
+                        
+                    }
+                    if let location = json["location"] as? [String : AnyObject] {
+                        self.locationName = location["name"] as! String
+                    }
+                    if let _ = json["error"] {
+                        self.realLocation = false
                     }
                     
+                    DispatchQueue.main.async {
+                        if self.realLocation{
+                            self.degreeLabel.text = String(self.cdeg) + "º C"
+                            self.cityLabel.text = self.locationName
+                            self.descriptionLabel.text = self.descript
+                            
+                        } else{
+                            self.cityLabel.text = "No matching city"
+                            self.degreeLabel.text = ""
+                            self.descriptionLabel.text = ""
+                            self.imgView.isHidden = true
+                            self.realLocation = true
+                        }
+                    }
                 } catch let jsonErr{
                     print(jsonErr.localizedDescription)
                 }
             }
         }
+        task.resume()
     }
 }
 
