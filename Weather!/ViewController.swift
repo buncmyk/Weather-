@@ -25,7 +25,7 @@ class ViewController: UIViewController, UISearchBarDelegate{
         super.viewDidLoad()
         
         //set default labels on start
-        cityLabel.text = "Type your city"
+        cityLabel.text = ""
         degreeLabel.text = ""
         descriptionLabel.text = ""
         searchBar.delegate = self

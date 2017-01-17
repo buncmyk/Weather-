@@ -22,17 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFo-SW-Igq">
-                                <rect key="frame" x="66" y="144" width="241" height="85"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="85"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="GN8-qM-xTb"/>
                                     <constraint firstAttribute="width" constant="117" id="Maw-c8-7BN"/>
-                                    <constraint firstAttribute="height" constant="21" id="gQs-PT-d7K"/>
+                                    <constraint firstAttribute="height" constant="85" id="NFE-Eh-fvN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                <color key="textColor" white="0.1938181628" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="D50-1T-Dig">
+                            <searchBar contentMode="redraw" placeholder="Type city name!" translatesAutoresizingMaskIntoConstraints="NO" id="D50-1T-Dig">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" white="0.55254448784722221" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="55º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj0-lu-H6n">
@@ -40,14 +42,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="pqS-CU-4uM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="82"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="122"/>
+                                <color key="textColor" white="0.21226434335555558" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.69810655377222219" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srt-bh-hdQ">
                                 <rect key="frame" x="116" y="478" width="141" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7c-YW-HXL">
@@ -67,9 +71,11 @@
                             <constraint firstItem="RFo-SW-Igq" firstAttribute="top" secondItem="D50-1T-Dig" secondAttribute="bottom" constant="82" id="YKY-La-ERd"/>
                             <constraint firstItem="Sj0-lu-H6n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cmP-IH-goE"/>
                             <constraint firstItem="Sj0-lu-H6n" firstAttribute="top" secondItem="RFo-SW-Igq" secondAttribute="bottom" constant="35" id="dNX-3T-Y7s"/>
+                            <constraint firstItem="RFo-SW-Igq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eRK-b7-MZ1"/>
                             <constraint firstItem="W7c-YW-HXL" firstAttribute="top" secondItem="Srt-bh-hdQ" secondAttribute="bottom" constant="9" id="eoy-bF-2bZ"/>
                             <constraint firstItem="Srt-bh-hdQ" firstAttribute="top" secondItem="Sj0-lu-H6n" secondAttribute="bottom" constant="76" id="trJ-Ia-Ti3"/>
                             <constraint firstItem="Srt-bh-hdQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="urF-DH-Dui"/>
+                            <constraint firstAttribute="trailing" secondItem="RFo-SW-Igq" secondAttribute="trailing" id="vsx-ps-kP1"/>
                             <constraint firstItem="RFo-SW-Igq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wXd-8u-60S"/>
                         </constraints>
                     </view>
