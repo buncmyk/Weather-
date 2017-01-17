@@ -66,6 +66,8 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="RFo-SW-Igq" id="jgB-WY-ONV"/>
+                        <outlet property="degreeLabel" destination="Sj0-lu-H6n" id="HOZ-GV-I4q"/>
+                        <outlet property="descriptionLabel" destination="Srt-bh-hdQ" id="DVT-Kl-yEW"/>
                         <outlet property="searchBar" destination="D50-1T-Dig" id="l1d-T9-Hhi"/>
                     </connections>
                 </viewController>

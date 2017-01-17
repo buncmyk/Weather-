@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
-    
     @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var degreeLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
