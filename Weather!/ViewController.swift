@@ -39,7 +39,7 @@ class ViewController: UIViewController, UISearchBarDelegate{
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let urlRequest = URLRequest(url: URL(string: "http://api.apixu.com/v1/current.json?key=f08995fe7f4947948a4135634171701&q=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))")!) //Read searchbar input city and replace spacing with %20
+        let urlRequest = URLRequest(url: URL(string: "http://api.apixu.com/v1/current.json?key=f08995fe7f4947948a4135634171701&q=\(searchBar.text!.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"))!)")!) //Read searchbar input city and replace spacing and polish characters with %
         let task = URLSession.shared.dataTask(with: urlRequest) {(data, response, error) in
             if error == nil {
                 do {
