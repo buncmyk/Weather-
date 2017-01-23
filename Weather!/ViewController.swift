@@ -21,6 +21,9 @@ class ViewController: UIViewController, UISearchBarDelegate{
     var imageUrl: String = ""
     var realLocation: Bool = true
     var locationName: String = ""
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,8 @@ class ViewController: UIViewController, UISearchBarDelegate{
         degreeLabel.text = ""
         descriptionLabel.text = ""
         searchBar.delegate = self
-        
+        //hide keyboard on screen tap
+        self.hideKeyboardWhenTappedAround()
         
     }
 
@@ -82,6 +86,18 @@ class ViewController: UIViewController, UISearchBarDelegate{
             }
         }
         task.resume()
+    }
+}
+
+// hiding keyboard after use
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
